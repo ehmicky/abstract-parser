@@ -1,6 +1,6 @@
 import { validate } from 'jest-validate'
 
-import { validateBasicOpts } from '../options.js'
+import { isPlainObject } from './utils.js'
 
 // Normalize options and assign default values
 export const getOpts = function(code, opts = {}) {
@@ -19,7 +19,9 @@ const validateBasic = function(code, opts) {
     throw new TypeError(`Code must be a string: ${code}`)
   }
 
-  validateBasicOpts(opts)
+  if (!isPlainObject(opts)) {
+    throw new TypeError(`Options must be a plain object: ${opts}`)
+  }
 }
 
 // This is exported so that `dev-parser` package can use it
