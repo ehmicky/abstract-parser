@@ -40,7 +40,8 @@ const parse = function(
     sourceFilename: source,
   })
 
-  return { ...node, ...normalizeTokens('tokens', node.tokens) }
+  const nodeA = normalizeTokens(node, 'tokens')
+  return nodeA
 }
 
 // @babel/parser without `estree` plugin
@@ -52,8 +53,8 @@ export const babel = {
 }
 
 // @babel/parser with `estree` plugin
-export const babelEstree = {
-  id: 'babelEstree',
+export const babelestree = {
+  id: 'babelestree',
   title: 'Babel-ESTree',
   syntaxes: ['typescript', 'flow', 'jsx'],
   parse: parse.bind(null, ['estree']),

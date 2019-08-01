@@ -1,9 +1,9 @@
-import { parse as typescriptEstreeParse } from '@typescript-eslint/typescript-estree'
+import { parse as typescriptestreeParse } from '@typescript-eslint/typescript-estree'
 
 // Parse JavaScript code with TypeScript-ESTree
 const parse = function(code, { loose, locations, comments, tokens, jsx }) {
   try {
-    return typescriptEstreeParse(code, {
+    return typescriptestreeParse(code, {
       errorOnUnknownASTType: loose,
       loc: locations,
       range: locations,
@@ -17,8 +17,8 @@ const parse = function(code, { loose, locations, comments, tokens, jsx }) {
   }
 }
 
-export const typescriptEstree = {
-  id: 'typescriptEstree',
+export const typescriptestree = {
+  id: 'typescriptestree',
   title: 'TypeScript-ESTree',
   syntaxes: ['typescript', 'jsx'],
   parse,

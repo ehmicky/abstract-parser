@@ -19,10 +19,7 @@ const parse = function(
 ) {
   const acornParser = addPlugins(legacy, jsx)
 
-  const { allComments, allTokens, onceOpts } = getOnceState({
-    comments,
-    tokens,
-  })
+  const mutableOpts = getMutableOpts({ comments, tokens })
 
   const node = acornParser.parse(code, {
     sourceType,
@@ -39,14 +36,11 @@ const parse = function(
     ...(legacy ? {} : { ecmaVersion: 2020 }),
     allowHashBang: true,
     sourceFile: source,
-    ...onceOpts,
+    ...mutableOpts,
   })
 
-  return {
-    ...node,
-    ...addComments(allComments),
-    ...normalizeTokens('onToken', allTokens),
-  }
+  const mutableOptsA = normalizeTokens(mutableOpts, 'onToken')
+  return { ...node, ...mutableOptsA }
 }
 
 export const acorn = {
@@ -57,25 +51,9 @@ export const acorn = {
 }
 
 // acorn requires passing mutable arrays to collect comments and tokens.
-// This is done once per call.
-const getOnceState = function({ comments, tokens }) {
-  const allComments = comments ? [] : undefined
-  const allTokens = tokens ? [] : undefined
-  const onceOpts = getOnceOpts({ allComments, allTokens })
-  return { allComments, allTokens, onceOpts }
-}
-
-const getOnceOpts = function({ allComments, allTokens }) {
+const getMutableOpts = function({ comments, tokens }) {
   return {
-    ...(allComments === undefined ? {} : { onComment: allComments }),
-    ...(allTokens === undefined ? {} : { onToken: allTokens }),
+    ...(comments === undefined ? {} : { onComment: [] }),
+    ...(tokens === undefined ? {} : { onToken: [] }),
   }
-}
-
-const addComments = function(allComments) {
-  if (allComments === undefined) {
-    return
-  }
-
-  return { onComment: allComments }
 }

@@ -3,9 +3,22 @@ import { parse as meriyahParse } from 'meriyah'
 // Parse JavaScript code with Meriyah
 const parse = function(
   code,
-  { legacy, sourceType, loose, strict, locations, parens, source, jsx },
+  {
+    legacy,
+    sourceType,
+    loose,
+    strict,
+    locations,
+    comments,
+    parens,
+    source,
+    jsx,
+  },
 ) {
-  return meriyahParse(code, {
+  // meriyah requires passing mutable arrays to collect comments.
+  const mutableOpts = comments === undefined ? {} : { onComment: [] }
+
+  const node = meriyahParse(code, {
     module: sourceType === 'module',
     globalReturn: loose,
     specDeviation: loose,
@@ -18,7 +31,10 @@ const parse = function(
     next: !legacy,
     jsx,
     source,
+    ...mutableOpts,
   })
+
+  return { ...node, ...mutableOpts }
 }
 
 export const meriyah = {
