@@ -33,7 +33,7 @@
     "acorn": "^6.2.1",
     "acorn-jsx": "^5.0.1",
     "acorn-stage3": "^2.0.0",
-    "core-js": "^3.1.4",
+    "core-js": "^3.2.0",
     "espree": "^6.0.0",
     "esprima": "^4.0.1",
     "jest-validate": "^24.8.0",
