@@ -1,6 +1,5 @@
 import { validate } from 'jest-validate'
-
-import { isPlainObject } from './utils.js'
+import isPlainObj from 'is-plain-obj'
 
 // Normalize options and assign default values
 export const getOpts = function(code, opts = {}) {
@@ -19,7 +18,7 @@ const validateBasic = function(code, opts) {
     throw new TypeError(`Code must be a string: ${code}`)
   }
 
-  if (!isPlainObject(opts)) {
+  if (!isPlainObj(opts)) {
     throw new TypeError(`Options must be a plain object: ${opts}`)
   }
 }
