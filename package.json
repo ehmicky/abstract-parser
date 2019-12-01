@@ -38,7 +38,7 @@
     "esprima": "^4.0.1",
     "is-plain-obj": "^2.0.0",
     "jest-validate": "^24.9.0",
-    "meriyah": "^1.6.15",
+    "meriyah": "^1.9.3",
     "moize": "^5.4.4",
     "typescript": "^3.7.3"
   },
