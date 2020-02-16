@@ -40,7 +40,7 @@
     "jest-validate": "^25.1.0",
     "meriyah": "^1.9.7",
     "moize": "^5.4.5",
-    "typescript": "^3.7.3"
+    "typescript": "^3.8.2"
   },
   "devDependencies": {
     "@ehmicky/dev-tasks": "^0.31.8",
