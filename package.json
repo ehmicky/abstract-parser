@@ -37,7 +37,7 @@
     "espree": "^6.1.2",
     "esprima": "^4.0.1",
     "is-plain-obj": "^2.1.0",
-    "jest-validate": "^24.9.0",
+    "jest-validate": "^25.1.0",
     "meriyah": "^1.9.3",
     "moize": "^5.4.5",
     "typescript": "^3.7.3"
