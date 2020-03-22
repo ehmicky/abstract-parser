@@ -1,7 +1,7 @@
 import { parse as meriyahParse } from 'meriyah'
 
 // Parse JavaScript code with Meriyah
-const parse = function(
+const parse = function (
   code,
   {
     legacy,

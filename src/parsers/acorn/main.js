@@ -3,7 +3,7 @@ import { normalizeTokens } from '../../tokens.js'
 import { addPlugins } from './plugins.js'
 
 // Parse JavaScript code with Acorn
-const parse = function(
+const parse = function (
   code,
   {
     legacy,
@@ -51,7 +51,7 @@ export const acorn = {
 }
 
 // acorn requires passing mutable arrays to collect comments and tokens.
-const getMutableOpts = function({ comments, tokens }) {
+const getMutableOpts = function ({ comments, tokens }) {
   return {
     ...(comments === undefined ? {} : { onComment: [] }),
     ...(tokens === undefined ? {} : { onToken: [] }),

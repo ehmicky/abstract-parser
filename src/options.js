@@ -2,7 +2,7 @@ import { validate } from 'jest-validate'
 import isPlainObj from 'is-plain-obj'
 
 // Normalize options and assign default values
-export const getOpts = function(code, opts = {}) {
+export const getOpts = function (code, opts = {}) {
   validateBasic(code, opts)
   validate(opts, { exampleConfig: EXAMPLE_OPTS })
 
@@ -13,7 +13,7 @@ export const getOpts = function(code, opts = {}) {
   return optsC
 }
 
-const validateBasic = function(code, opts) {
+const validateBasic = function (code, opts) {
   if (typeof code !== 'string') {
     throw new TypeError(`Code must be a string: ${code}`)
   }
@@ -45,7 +45,7 @@ export const EXAMPLE_OPTS = {
   source: 'filename.js',
 }
 
-const setForcedOpts = function({
+const setForcedOpts = function ({
   opts,
   opts: { flow, typescript, top, comments, tokens },
 }) {
@@ -59,7 +59,7 @@ const setForcedOpts = function({
   }
 }
 
-const addSourceType = function({ script, ...opts }) {
+const addSourceType = function ({ script, ...opts }) {
   const sourceType = script ? 'script' : 'module'
   return { ...opts, sourceType }
 }

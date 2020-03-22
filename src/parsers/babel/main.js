@@ -5,7 +5,7 @@ import { normalizeTokens } from '../../tokens.js'
 import { getPlugins } from './plugins.js'
 
 // Parse JavaScript code with @babel/parser
-const parse = function(
+const parse = function (
   plugins,
   code,
   {

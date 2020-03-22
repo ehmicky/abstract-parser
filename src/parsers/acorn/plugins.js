@@ -5,7 +5,7 @@ import acornJsx from 'acorn-jsx'
 import moize from 'moize'
 
 // Add acorn plugins according to options
-const mAddPlugins = function(legacy, jsx) {
+const mAddPlugins = function (legacy, jsx) {
   const plugins = [
     ...(legacy ? [] : [acornStage3]),
     ...(jsx ? [acornJsx()] : []),
