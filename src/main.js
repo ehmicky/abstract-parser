@@ -1,6 +1,6 @@
-import { PARSERS } from './parsers/main.js'
-import { getOpts } from './options.js'
 import { normalizeNode } from './normalize/main.js'
+import { getOpts } from './options.js'
+import { PARSERS } from './parsers/main.js'
 
 // Retrieve an object with all parsers
 const getParsers = function () {

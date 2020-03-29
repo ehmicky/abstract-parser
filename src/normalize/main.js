@@ -1,6 +1,6 @@
-import { traverse } from './traverse.js'
 import { getRemovedAttrs, removeAttrs } from './attributes.js'
 import { sortKeys } from './sort.js'
+import { traverse } from './traverse.js'
 
 // Normalize AST node produced by parsers, according to options
 export const normalizeNode = function (
