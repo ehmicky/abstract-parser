@@ -36,6 +36,7 @@
     "core-js": "^3.6.5",
     "espree": "^6.2.1",
     "esprima": "^4.0.1",
+    "filter-obj": "^2.0.1",
     "is-plain-obj": "^2.1.0",
     "jest-validate": "^25.3.0",
     "meriyah": "^1.9.12",

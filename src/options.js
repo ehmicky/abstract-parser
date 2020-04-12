@@ -1,3 +1,4 @@
+import filterObj from 'filter-obj'
 import isPlainObj from 'is-plain-obj'
 import { validate } from 'jest-validate'
 
@@ -6,11 +7,12 @@ export const getOpts = function (code, opts = {}) {
   validateBasic(code, opts)
   validate(opts, { exampleConfig: EXAMPLE_OPTS })
 
-  const optsA = { ...DEFAULT_OPTS, ...opts }
+  const optsA = filterObj(opts, isDefined)
+  const optsB = { ...DEFAULT_OPTS, ...optsA }
 
-  const optsB = setForcedOpts({ opts: optsA })
-  const optsC = addSourceType(optsB)
-  return optsC
+  const optsC = setForcedOpts({ opts: optsB })
+  const optsD = addSourceType(optsC)
+  return optsD
 }
 
 const validateBasic = function (code, opts) {
@@ -43,6 +45,10 @@ export const DEFAULT_OPTS = {
 export const EXAMPLE_OPTS = {
   ...DEFAULT_OPTS,
   source: 'filename.js',
+}
+
+const isDefined = function (key, value) {
+  return value !== undefined
 }
 
 const setForcedOpts = function ({
