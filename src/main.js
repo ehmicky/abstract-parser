@@ -8,7 +8,7 @@ const getParsers = function () {
 }
 
 const getParser = function ({ id, parse, ...parser }) {
-  return [id, { id, ...parser, parse: parseCode.bind(null, parse) }]
+  return [id, { id, ...parser, parse: parseCode.bind(undefined, parse) }]
 }
 
 // Main `parse()` function of each parser.

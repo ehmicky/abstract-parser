@@ -16,7 +16,7 @@ export const normalizeNode = function (
     return nodeA
   }
 
-  return traverse(nodeA, normalize.bind(null, { removedAttrs, sort }))
+  return traverse(nodeA, normalize.bind(undefined, { removedAttrs, sort }))
 }
 
 // Unless the `top` option is used, we skip the top node
