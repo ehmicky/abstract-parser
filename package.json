@@ -32,7 +32,7 @@
     "@typescript-eslint/typescript-estree": "^2.30.0",
     "acorn": "^7.1.1",
     "acorn-jsx": "^5.2.0",
-    "acorn-stage3": "^2.0.0",
+    "acorn-stage3": "^2.1.0",
     "core-js": "^3.6.5",
     "espree": "^6.2.1",
     "esprima": "^4.0.1",
