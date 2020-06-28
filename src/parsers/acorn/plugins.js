@@ -18,4 +18,4 @@ const mAddPlugins = function (legacy, jsx) {
   return acornMain.Parser.extend(...plugins)
 }
 
-export const addPlugins = moize(mAddPlugins)
+export const addPlugins = moize(mAddPlugins, { maxSize: 1e3 })
