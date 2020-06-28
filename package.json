@@ -40,7 +40,7 @@
     "is-plain-obj": "^2.1.0",
     "jest-validate": "^26.1.0",
     "meriyah": "^1.9.12",
-    "moize": "^5.4.6",
+    "moize": "^5.4.7",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
