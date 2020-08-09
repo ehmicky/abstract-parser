@@ -20,6 +20,7 @@ const parse = function (
   const acornParser = addPlugins(legacy, jsx)
 
   const mutableOpts = getMutableOpts({ comments, tokens })
+  const ecmaVersion = getEcmaVersion(legacy)
 
   const node = acornParser.parse(code, {
     sourceType,
@@ -33,7 +34,7 @@ const parse = function (
     locations,
     ranges: locations,
     preserveParens: parens,
-    ...(legacy ? {} : { ecmaVersion: 2020 }),
+    ecmaVersion,
     allowHashBang: true,
     sourceFile: source,
     ...mutableOpts,
@@ -42,6 +43,17 @@ const parse = function (
   const mutableOptsA = normalizeTokens(mutableOpts, 'onToken')
   return { ...node, ...mutableOptsA }
 }
+
+const getEcmaVersion = function (legacy) {
+  if (legacy) {
+    return EARLIEST_ECMA_VERSION
+  }
+
+  return LATEST_ECMA_VERSION
+}
+
+const EARLIEST_ECMA_VERSION = 3
+const LATEST_ECMA_VERSION = 2021
 
 export const acorn = {
   id: 'acorn',
