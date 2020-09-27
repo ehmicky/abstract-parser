@@ -7,7 +7,7 @@
 
 Abstraction layer for JavaScript parsers.
 
-Work in progress!
+Work in progress.
 
 # Support
 
