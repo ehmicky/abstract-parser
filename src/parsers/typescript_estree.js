@@ -17,8 +17,8 @@ const parse = function (code, { loose, locations, comments, tokens, jsx }) {
   }
 }
 
-export const typescriptestree = {
-  id: 'typescriptestree',
+export const typescriptEstree = {
+  id: 'typescriptEstree',
   title: 'TypeScript-ESTree',
   syntaxes: ['typescript', 'jsx'],
   parse,

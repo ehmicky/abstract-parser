@@ -1,14 +1,17 @@
 import { normalizeNode } from './normalize/main.js'
 import { getOpts } from './options.js'
-import { PARSERS } from './parsers/main.js'
+import {
+  acorn as acornParser,
+  babel as babelParser,
+  babelEstree as babelEstreeParser,
+  espree as espreeParser,
+  esprima as esprimaParser,
+  meriyah as meriyahParser,
+  typescriptEstree as typescriptEstreeParser,
+} from './parsers/main.js'
 
-// Retrieve an object with all parsers
-const getParsers = function () {
-  return Object.fromEntries(PARSERS.map(getParser))
-}
-
-const getParser = function ({ id, parse, ...parser }) {
-  return [id, { id, ...parser, parse: parseCode.bind(undefined, parse) }]
+const getParser = function (parser) {
+  return { ...parser, parse: parseCode.bind(undefined, parser.parse) }
 }
 
 // Main `parse()` function of each parser.
@@ -20,8 +23,10 @@ const parseCode = function (parse, code, opts) {
   return nodeA
 }
 
-const abstractParser = getParsers()
-
-// We do not use `export default` because Babel transpiles it in a way that
-// requires CommonJS users to `require(...).default` instead of `require(...)`.
-module.exports = abstractParser
+export const acorn = getParser(acornParser)
+export const babel = getParser(babelParser)
+export const babelEstree = getParser(babelEstreeParser)
+export const espree = getParser(espreeParser)
+export const esprima = getParser(esprimaParser)
+export const meriyah = getParser(meriyahParser)
+export const typescriptEstree = getParser(typescriptEstreeParser)

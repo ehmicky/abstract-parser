@@ -53,8 +53,8 @@ export const babel = {
 }
 
 // @babel/parser with `estree` plugin
-export const babelestree = {
-  id: 'babelestree',
+export const babelEstree = {
+  id: 'babelEstree',
   title: 'Babel-ESTree',
   syntaxes: ['typescript', 'flow', 'jsx'],
   parse: parse.bind(undefined, ['estree']),

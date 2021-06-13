@@ -1,16 +1,6 @@
-import { acorn } from './acorn/main.js'
-import { babel, babelestree } from './babel/main.js'
-import { espree } from './espree.js'
-import { esprima } from './esprima.js'
-import { meriyah } from './meriyah.js'
-import { typescriptestree } from './typescript_estree.js'
-
-export const PARSERS = [
-  esprima,
-  acorn,
-  espree,
-  meriyah,
-  typescriptestree,
-  babelestree,
-  babel,
-]
+export { acorn } from './acorn/main.js'
+export { babel, babelEstree } from './babel/main.js'
+export { espree } from './espree.js'
+export { esprima } from './esprima.js'
+export { meriyah } from './meriyah.js'
+export { typescriptEstree } from './typescript_estree.js'
