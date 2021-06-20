@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-namespace
-import * as acornMain from 'acorn'
+import { parse, Parser } from 'acorn'
 import acornJsx from 'acorn-jsx'
 import acornStage3 from 'acorn-stage3'
 import moize from 'moize'
@@ -10,12 +9,7 @@ const mAddPlugins = function (legacy, jsx) {
     ...(legacy ? [] : [acornStage3]),
     ...(jsx ? [acornJsx()] : []),
   ]
-
-  if (plugins.length === 0) {
-    return acornMain
-  }
-
-  return acornMain.Parser.extend(...plugins)
+  return plugins.length === 0 ? parse : Parser.extend(...plugins)
 }
 
 export const addPlugins = moize(mAddPlugins, { maxSize: 1e3 })
