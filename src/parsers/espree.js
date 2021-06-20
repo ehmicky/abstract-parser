@@ -10,7 +10,7 @@ const parse = function (
     loc: locations,
     range: locations,
     comment: comments,
-    ...(legacy ? {} : { ecmaVersion: 2020 }),
+    ...(legacy ? {} : { ecmaVersion: 2022 }),
     ecmaFeatures: {
       globalReturn: loose,
       impliedStrict: strict,
