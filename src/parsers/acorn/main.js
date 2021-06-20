@@ -53,7 +53,7 @@ const getEcmaVersion = function (legacy) {
 }
 
 const EARLIEST_ECMA_VERSION = 3
-const LATEST_ECMA_VERSION = 2021
+const LATEST_ECMA_VERSION = 2022
 
 export const acorn = {
   id: 'acorn',
