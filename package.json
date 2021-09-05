@@ -34,7 +34,7 @@
     "esprima": "^4.0.1",
     "filter-obj": "^3.0.0",
     "is-plain-obj": "^4.0.0",
-    "jest-validate": "^27.0.6",
+    "jest-validate": "^27.1.1",
     "meriyah": "^2.1.1",
     "moize": "^6.0.3",
     "typescript": "^4.3.4"
