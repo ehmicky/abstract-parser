@@ -9,7 +9,6 @@ const parse = function (code, { loose, locations, comments, tokens, jsx }) {
       range: locations,
       comment: comments,
       jsx,
-      useJSXTextNode: jsx,
       tokens,
     })
   } catch (error) {
