@@ -25,7 +25,7 @@
     "test": "test"
   },
   "dependencies": {
-    "@babel/parser": "^7.17.3",
+    "@babel/parser": "^7.17.9",
     "@typescript-eslint/typescript-estree": "^5.18.0",
     "acorn": "^8.7.0",
     "acorn-jsx": "^5.3.2",
