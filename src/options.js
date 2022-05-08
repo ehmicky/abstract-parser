@@ -25,8 +25,7 @@ const validateBasic = function (code, opts) {
   }
 }
 
-// This is exported so that `dev-parser` package can use it
-export const DEFAULT_OPTS = {
+const DEFAULT_OPTS = {
   legacy: false,
   script: false,
   loose: false,
@@ -42,7 +41,7 @@ export const DEFAULT_OPTS = {
   jsx: false,
 }
 
-export const EXAMPLE_OPTS = {
+const EXAMPLE_OPTS = {
   ...DEFAULT_OPTS,
   source: 'filename.js',
 }
