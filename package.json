@@ -33,7 +33,7 @@
     "espree": "^9.3.1",
     "esprima": "^4.0.1",
     "filter-obj": "^3.0.0",
-    "is-plain-obj": "^4.0.0",
+    "is-plain-obj": "^4.1.0",
     "jest-validate": "^27.5.1",
     "meriyah": "^2.1.1",
     "moize": "^6.1.1",
