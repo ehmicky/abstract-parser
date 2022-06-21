@@ -1,5 +1,4 @@
 [![Codecov](https://img.shields.io/codecov/c/github/ehmicky/abstract-parser.svg?label=tested&logo=codecov)](https://codecov.io/gh/ehmicky/abstract-parser)
-[![Build](https://github.com/ehmicky/abstract-parser/workflows/Build/badge.svg)](https://github.com/ehmicky/abstract-parser/actions)
 [![Node](https://img.shields.io/node/v/abstract-parser.svg?logo=node.js)](https://www.npmjs.com/package/abstract-parser)
 [![Twitter](https://img.shields.io/badge/%E2%80%8B-twitter-4cc61e.svg?logo=twitter)](https://twitter.com/intent/follow?screen_name=ehmicky)
 [![Medium](https://img.shields.io/badge/%E2%80%8B-medium-4cc61e.svg?logo=medium)](https://medium.com/@ehmicky)
