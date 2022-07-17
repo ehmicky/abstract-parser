@@ -1,4 +1,4 @@
-import filterObj from 'filter-obj'
+import { excludeKeys } from 'filter-obj'
 import isPlainObj from 'is-plain-obj'
 import { validate } from 'jest-validate'
 
@@ -7,7 +7,7 @@ export const getOpts = function (code, opts = {}) {
   validateBasic(code, opts)
   validate(opts, { exampleConfig: EXAMPLE_OPTS })
 
-  const optsA = filterObj(opts, isDefined)
+  const optsA = excludeKeys(opts, isUndefined)
   const optsB = { ...DEFAULT_OPTS, ...optsA }
 
   const optsC = setForcedOpts({ opts: optsB })
@@ -46,8 +46,8 @@ const EXAMPLE_OPTS = {
   source: 'filename.js',
 }
 
-const isDefined = function (key, value) {
-  return value !== undefined
+const isUndefined = function (key, value) {
+  return value === undefined
 }
 
 const setForcedOpts = function ({
