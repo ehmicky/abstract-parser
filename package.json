@@ -14,7 +14,7 @@
   "description": "Abstraction layer for JavaScript parsers",
   "keywords": [],
   "license": "Apache-2.0",
-  "homepage": "https://git.io/fjMJP",
+  "homepage": "https://www.github.com/ehmicky/abstract-parser",
   "repository": "ehmicky/abstract-parser",
   "bugs": {
     "url": "https://github.com/ehmicky/abstract-parser/issues"
