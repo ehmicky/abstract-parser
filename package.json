@@ -34,8 +34,8 @@
     "filter-obj": "^5.1.0",
     "is-plain-obj": "^4.1.0",
     "jest-validate": "^29.0.1",
+    "mem": "^9.0.2",
     "meriyah": "^2.1.1",
-    "moize": "^6.1.1",
     "typescript": "^4.8.2"
   },
   "devDependencies": {
