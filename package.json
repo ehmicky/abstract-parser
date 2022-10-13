@@ -12,7 +12,7 @@
   },
   "description": "Abstraction layer for JavaScript parsers",
   "keywords": [],
-  "license": "Apache-2.0",
+  "license": "MIT",
   "homepage": "https://www.github.com/ehmicky/abstract-parser",
   "repository": "ehmicky/abstract-parser",
   "bugs": {
