@@ -1,16 +1,15 @@
-import { excludeKeys } from 'filter-obj'
 import isPlainObj from 'is-plain-obj'
-import { validate } from 'jest-validate'
 
 // Normalize options and assign default values
 export const getOpts = function (code, opts = {}) {
   validateBasic(code, opts)
-  validate(opts, { exampleConfig: EXAMPLE_OPTS })
+  const optsA = normalizeBooleanOpts(opts)
 
-  const optsA = excludeKeys(opts, isUndefined)
-  const optsB = { ...DEFAULT_OPTS, ...optsA }
+  if (typeof optsA.source !== 'string') {
+    throw new TypeError(`Option "source" must be a string: ${optsA.source}`)
+  }
 
-  const optsC = setForcedOpts({ opts: optsB })
+  const optsC = setForcedOpts({ opts: optsA })
   const optsD = addSourceType(optsC)
   return optsD
 }
@@ -25,29 +24,34 @@ const validateBasic = function (code, opts) {
   }
 }
 
-const DEFAULT_OPTS = {
-  legacy: false,
-  script: false,
-  loose: false,
-  strict: false,
-  top: false,
-  sort: false,
-  locations: false,
-  comments: false,
-  tokens: false,
-  parens: false,
-  typescript: false,
-  flow: false,
-  jsx: false,
+const normalizeBooleanOpts = function (opts) {
+  return BOOLEAN_OPTS.reduce(normalizeBooleanOpt, opts)
 }
 
-const EXAMPLE_OPTS = {
-  ...DEFAULT_OPTS,
-  source: 'filename.js',
-}
+const BOOLEAN_OPTS = [
+  'legacy',
+  'script',
+  'loose',
+  'strict',
+  'top',
+  'sort',
+  'locations',
+  'comments',
+  'tokens',
+  'parens',
+  'typescript',
+  'flow',
+  'jsx',
+]
 
-const isUndefined = function (key, value) {
-  return value === undefined
+const normalizeBooleanOpt = function (opts, optName) {
+  const { [optName]: optValue = false } = opts
+
+  if (typeof optValue !== 'boolean') {
+    throw new TypeError(`Option "${optName}" must be a boolean: ${optValue}`)
+  }
+
+  return { ...opts, [optName]: optValue }
 }
 
 const setForcedOpts = function ({
