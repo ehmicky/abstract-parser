@@ -5,7 +5,7 @@
   "exports": "./build/src/main.js",
   "main": "./build/src/main.js",
   "files": [
-    "build/src/**/*.{js,d.ts,json}"
+    "build/src/**/*.{js,json}"
   ],
   "scripts": {
     "test": "gulp test"
