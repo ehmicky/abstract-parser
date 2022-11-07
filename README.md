@@ -1,11 +1,11 @@
-[![Codecov](https://img.shields.io/codecov/c/github/ehmicky/abstract-parser.svg?label=tested&logo=codecov)](https://codecov.io/gh/ehmicky/abstract-parser)
-[![Node](https://img.shields.io/node/v/abstract-parser.svg?logo=node.js&logoColor=66cc33)](https://www.npmjs.com/package/abstract-parser)
-[![Twitter](https://img.shields.io/badge/%E2%80%8B-twitter-brightgreen.svg?logo=twitter)](https://twitter.com/intent/follow?screen_name=ehmicky)
-[![Medium](https://img.shields.io/badge/%E2%80%8B-medium-brightgreen.svg?logo=medium)](https://medium.com/@ehmicky)
+[![Node](https://img.shields.io/badge/-Node.js-808080?logo=node.js&colorA=404040&logoColor=66cc33)](https://www.npmjs.com/package/abstract-parser)
+[![Browsers](https://img.shields.io/badge/-Browsers-808080?logo=firefox&colorA=404040)](https://unpkg.com/abstract-parser?module)
+[![Twitter](https://img.shields.io/badge/-Twitter-808080.svg?logo=twitter&colorA=404040)](https://twitter.com/intent/follow?screen_name=ehmicky)
+[![Medium](https://img.shields.io/badge/-Medium-808080.svg?logo=medium&colorA=404040)](https://medium.com/@ehmicky)
 
 Abstraction layer for JavaScript parsers.
 
-Work in progress.
+Work in progress!
 
 # Support
 
