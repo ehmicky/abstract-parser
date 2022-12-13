@@ -1,5 +1,5 @@
 // Traverse an object and perform a `transform()` on each descendant
-export const traverse = function (object, transform) {
+export const traverse = (object, transform) => {
   if (typeof object !== 'object' || object === null) {
     return object
   }
@@ -17,6 +17,4 @@ export const traverse = function (object, transform) {
   return objectC
 }
 
-const isDefinedChild = function ([, child]) {
-  return child !== undefined
-}
+const isDefinedChild = ([, child]) => child !== undefined

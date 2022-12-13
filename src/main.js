@@ -10,13 +10,14 @@ import {
   typescriptEstree as typescriptEstreeParser,
 } from './parsers/main.js'
 
-const getParser = function (parser) {
-  return { ...parser, parse: parseCode.bind(undefined, parser.parse) }
-}
+const getParser = (parser) => ({
+  ...parser,
+  parse: parseCode.bind(undefined, parser.parse),
+})
 
 // Main `parse()` function of each parser.
 // We wrap the `parse()` function provided by the parser.
-const parseCode = function (parse, code, opts) {
+const parseCode = (parse, code, opts) => {
   const optsA = getOpts(code, opts)
   const node = parse(code, optsA)
   const nodeA = normalizeNode(node, optsA)

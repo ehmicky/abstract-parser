@@ -1,10 +1,7 @@
 import { parse as typescriptEstreeParse } from '@typescript-eslint/typescript-estree'
 
 // Parse JavaScript code with TypeScript-ESTree
-const parse = function (
-  code,
-  { loose, locations, comments, tokens, source, jsx },
-) {
+const parse = (code, { loose, locations, comments, tokens, source, jsx }) => {
   try {
     return typescriptEstreeParse(code, {
       errorOnUnknownASTType: loose,
@@ -28,6 +25,5 @@ export const typescriptEstree = {
 }
 
 // TypeScript-ESTree errors are not error instances
-const normalizeError = function ({ message, lineNumber, column }) {
-  return new Error(`${message} (${lineNumber}:${column})`)
-}
+const normalizeError = ({ message, lineNumber, column }) =>
+  new Error(`${message} (${lineNumber}:${column})`)

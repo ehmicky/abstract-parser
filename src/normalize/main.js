@@ -3,10 +3,10 @@ import { sortKeys } from './sort.js'
 import { traverse } from './traverse.js'
 
 // Normalize AST node produced by parsers, according to options
-export const normalizeNode = function (
+export const normalizeNode = (
   node,
   { top, locations, comments, parens, sort },
-) {
+) => {
   const nodeA = getTopNode(node, top)
 
   const removedAttrs = getRemovedAttrs({ locations, comments, parens })
@@ -20,7 +20,7 @@ export const normalizeNode = function (
 }
 
 // Unless the `top` option is used, we skip the top node
-const getTopNode = function (node, top) {
+const getTopNode = (node, top) => {
   if (top) {
     return node
   }
@@ -33,7 +33,7 @@ const getTopNode = function (node, top) {
 }
 
 // Normalize each AST child node recursively
-const normalize = function ({ removedAttrs, sort }, node) {
+const normalize = ({ removedAttrs, sort }, node) => {
   const nodeA = removeAttrs(node, removedAttrs)
   const nodeB = sortKeys(nodeA, { sort })
   return nodeB

@@ -1,11 +1,8 @@
 import { parse as esprimaParse } from 'esprima'
 
 // Parse JavaScript code with Esprima
-const parse = function (
-  code,
-  { sourceType, loose, locations, comments, tokens, jsx },
-) {
-  return esprimaParse(code, {
+const parse = (code, { sourceType, loose, locations, comments, tokens, jsx }) =>
+  esprimaParse(code, {
     sourceType,
     tolerant: loose,
     loc: locations,
@@ -14,7 +11,6 @@ const parse = function (
     jsx,
     tokens,
   })
-}
 
 export const esprima = {
   id: 'esprima',

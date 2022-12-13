@@ -1,11 +1,11 @@
 import { parse as espreeParse } from 'espree'
 
 // Parse JavaScript code with Espree
-const parse = function (
+const parse = (
   code,
   { legacy, sourceType, loose, strict, locations, comments, tokens, jsx },
-) {
-  return espreeParse(code, {
+) =>
+  espreeParse(code, {
     sourceType: legacy ? 'script' : sourceType,
     loc: locations,
     range: locations,
@@ -18,7 +18,6 @@ const parse = function (
     },
     tokens,
   })
-}
 
 export const espree = {
   id: 'espree',

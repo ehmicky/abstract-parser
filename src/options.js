@@ -1,7 +1,7 @@
 import isPlainObj from 'is-plain-obj'
 
 // Normalize options and assign default values
-export const getOpts = function (code, opts = {}) {
+export const getOpts = (code, opts = {}) => {
   validateBasic(code, opts)
   const optsA = normalizeBooleanOpts(opts)
 
@@ -14,7 +14,7 @@ export const getOpts = function (code, opts = {}) {
   return optsD
 }
 
-const validateBasic = function (code, opts) {
+const validateBasic = (code, opts) => {
   if (typeof code !== 'string') {
     throw new TypeError(`Code must be a string: ${code}`)
   }
@@ -24,9 +24,8 @@ const validateBasic = function (code, opts) {
   }
 }
 
-const normalizeBooleanOpts = function (opts) {
-  return BOOLEAN_OPTS.reduce(normalizeBooleanOpt, opts)
-}
+const normalizeBooleanOpts = (opts) =>
+  BOOLEAN_OPTS.reduce(normalizeBooleanOpt, opts)
 
 const BOOLEAN_OPTS = [
   'legacy',
@@ -44,7 +43,7 @@ const BOOLEAN_OPTS = [
   'jsx',
 ]
 
-const normalizeBooleanOpt = function (opts, optName) {
+const normalizeBooleanOpt = (opts, optName) => {
   const { [optName]: optValue = false } = opts
 
   if (typeof optValue !== 'boolean') {
@@ -54,21 +53,19 @@ const normalizeBooleanOpt = function (opts, optName) {
   return { ...opts, [optName]: optValue }
 }
 
-const setForcedOpts = function ({
+const setForcedOpts = ({
   opts,
   opts: { flow, typescript, top, comments, tokens },
-}) {
-  return {
-    ...opts,
-    // Flow is incompatible with TypeScript
-    flow: flow && !typescript,
-    // Comments and tokens are usually set on the top-level, so they require
-    // the `top` option to be `true`
-    top: top || comments || tokens,
-  }
-}
+}) => ({
+  ...opts,
+  // Flow is incompatible with TypeScript
+  flow: flow && !typescript,
+  // Comments and tokens are usually set on the top-level, so they require
+  // the `top` option to be `true`
+  top: top || comments || tokens,
+})
 
-const addSourceType = function ({ script, ...opts }) {
+const addSourceType = ({ script, ...opts }) => {
   const sourceType = script ? 'script' : 'module'
   return { ...opts, sourceType }
 }

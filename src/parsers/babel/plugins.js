@@ -1,12 +1,6 @@
 // Retrieve list of Babel plugins according to options
-export const getPlugins = function ({
-  plugins,
-  typescript,
-  flow,
-  jsx,
-  legacy,
-}) {
-  return [
+export const getPlugins = ({ plugins, typescript, flow, jsx, legacy }) =>
+  [
     { names: plugins, enabled: true },
     { names: ['typescript'], enabled: typescript },
     { names: ['flow', 'flowComments'], enabled: flow },
@@ -15,7 +9,6 @@ export const getPlugins = function ({
   ]
     .filter(isPluginEnabled)
     .flatMap(getPluginsNames)
-}
 
 // All `babel-syntax-*`
 const SYNTAX_PLUGINS = [
@@ -45,10 +38,6 @@ const SYNTAX_PLUGINS = [
   'throwExpressions',
 ]
 
-const isPluginEnabled = function ({ enabled }) {
-  return enabled
-}
+const isPluginEnabled = ({ enabled }) => enabled
 
-const getPluginsNames = function ({ names }) {
-  return names
-}
+const getPluginsNames = ({ names }) => names

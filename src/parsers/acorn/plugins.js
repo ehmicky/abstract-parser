@@ -4,7 +4,7 @@ import acornStage3 from 'acorn-stage3'
 import mem from 'mem'
 
 // Add acorn plugins according to options
-const mAddPlugins = function (legacy, jsx) {
+const mAddPlugins = (legacy, jsx) => {
   const plugins = [
     ...(legacy ? [] : [acornStage3]),
     ...(jsx ? [acornJsx()] : []),

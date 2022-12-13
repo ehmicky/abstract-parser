@@ -1,6 +1,6 @@
 // Normalize tokens format used by Babel and Acorn to make it closer to
 // format used by Espree, Esprima, Meriyah and TypeScript-ESTree
-export const normalizeTokens = function (node, name) {
+export const normalizeTokens = (node, name) => {
   if (node[name] === undefined) {
     return node
   }
@@ -9,7 +9,7 @@ export const normalizeTokens = function (node, name) {
   return { ...node, [name]: tokens }
 }
 
-const normalizeToken = function ({ type, value }) {
+const normalizeToken = ({ type, value }) => {
   const { type: typeA, token } = parseTokenType(type)
 
   if (value === undefined) {
@@ -20,7 +20,7 @@ const normalizeToken = function ({ type, value }) {
 }
 
 // `token.type` is a string for comments with Babel
-const parseTokenType = function (type) {
+const parseTokenType = (type) => {
   if (typeof type === 'string') {
     return { type, token: {} }
   }

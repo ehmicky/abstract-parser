@@ -5,7 +5,7 @@ import { normalizeTokens } from '../../tokens.js'
 import { getPlugins } from './plugins.js'
 
 // Parse JavaScript code with @babel/parser
-const parse = function (
+const parse = (
   plugins,
   code,
   {
@@ -21,7 +21,7 @@ const parse = function (
     flow,
     jsx,
   },
-) {
+) => {
   const pluginsA = getPlugins({ plugins, typescript, flow, jsx, legacy })
 
   const node = babelParse(code, {

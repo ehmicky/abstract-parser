@@ -1,7 +1,7 @@
 import { parse as meriyahParse } from 'meriyah'
 
 // Parse JavaScript code with Meriyah
-const parse = function (
+const parse = (
   code,
   {
     legacy,
@@ -14,7 +14,7 @@ const parse = function (
     source,
     jsx,
   },
-) {
+) => {
   // meriyah requires passing mutable arrays to collect comments.
   const mutableOpts = comments === undefined ? {} : { onComment: [] }
 

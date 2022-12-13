@@ -3,7 +3,7 @@ import { normalizeTokens } from '../../tokens.js'
 import { addPlugins } from './plugins.js'
 
 // Parse JavaScript code with Acorn
-const parse = function (
+const parse = (
   code,
   {
     legacy,
@@ -16,7 +16,7 @@ const parse = function (
     source,
     jsx,
   },
-) {
+) => {
   const acornParser = addPlugins(legacy, jsx)
 
   const mutableOpts = getMutableOpts({ comments, tokens })
@@ -44,7 +44,7 @@ const parse = function (
   return { ...node, ...mutableOptsA }
 }
 
-const getEcmaVersion = function (legacy) {
+const getEcmaVersion = (legacy) => {
   if (legacy) {
     return EARLIEST_ECMA_VERSION
   }
@@ -63,9 +63,7 @@ export const acorn = {
 }
 
 // acorn requires passing mutable arrays to collect comments and tokens.
-const getMutableOpts = function ({ comments, tokens }) {
-  return {
-    ...(comments === undefined ? {} : { onComment: [] }),
-    ...(tokens === undefined ? {} : { onToken: [] }),
-  }
-}
+const getMutableOpts = ({ comments, tokens }) => ({
+  ...(comments === undefined ? {} : { onComment: [] }),
+  ...(tokens === undefined ? {} : { onToken: [] }),
+})
