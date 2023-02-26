@@ -31,9 +31,12 @@ const parse = (
     // eslint-disable-next-line id-length
     allowAwaitOutsideFunction: loose,
     // eslint-disable-next-line id-length
+    allowNewTargetOutsideFunction: loose,
+    // eslint-disable-next-line id-length
     allowSuperOutsideFunction: loose,
     // eslint-disable-next-line id-length
     allowImportExportEverywhere: loose,
+    annexB: loose,
     strictMode: strict,
     plugins: pluginsA,
     attachComment: comments,
