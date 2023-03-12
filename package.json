@@ -31,7 +31,7 @@
     "acorn": "^8.8.2",
     "acorn-jsx": "^5.3.2",
     "acorn-stage3": "^4.0.0",
-    "espree": "^9.4.1",
+    "espree": "^9.5.0",
     "esprima": "^4.0.1",
     "is-plain-obj": "^4.1.0",
     "mem": "^9.0.2",
