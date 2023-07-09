@@ -4,7 +4,7 @@ import { parse as typescriptEstreeParse } from '@typescript-eslint/typescript-es
 const parse = (code, { loose, locations, comments, tokens, source, jsx }) => {
   try {
     return typescriptEstreeParse(code, {
-      errorOnUnknownASTType: loose,
+      allowInvalidAST: loose,
       loc: locations,
       range: locations,
       comment: comments,
