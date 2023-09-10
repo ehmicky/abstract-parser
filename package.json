@@ -39,7 +39,7 @@
     "is-plain-obj": "^4.1.0",
     "mem": "^9.0.2",
     "meriyah": "^2.1.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
     "@ehmicky/dev-tasks": "^2.0.94"
