@@ -29,7 +29,7 @@
     "lib": "src"
   },
   "dependencies": {
-    "@babel/parser": "^7.22.16",
+    "@babel/parser": "^7.23.0",
     "@typescript-eslint/typescript-estree": "^6.7.2",
     "acorn": "^8.10.0",
     "acorn-jsx": "^5.3.2",
