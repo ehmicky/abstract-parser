@@ -44,16 +44,9 @@ const parse = (
   return { ...node, ...mutableOptsA }
 }
 
-const getEcmaVersion = (legacy) => {
-  if (legacy) {
-    return EARLIEST_ECMA_VERSION
-  }
-
-  return LATEST_ECMA_VERSION
-}
+const getEcmaVersion = (legacy) => (legacy ? EARLIEST_ECMA_VERSION : 'latest')
 
 const EARLIEST_ECMA_VERSION = 3
-const LATEST_ECMA_VERSION = 2022
 
 export const acorn = {
   id: 'acorn',
