@@ -1,7 +1,7 @@
 import { parse, Parser } from 'acorn'
 import acornJsx from 'acorn-jsx'
 import acornStage3 from 'acorn-stage3'
-import mem from 'mem'
+import memoize from 'memoize'
 
 // Add acorn plugins according to options
 const mAddPlugins = (legacy, jsx) => {
@@ -12,4 +12,4 @@ const mAddPlugins = (legacy, jsx) => {
   return plugins.length === 0 ? parse : Parser.extend(...plugins)
 }
 
-export const addPlugins = mem(mAddPlugins, { cacheKey: String })
+export const addPlugins = memoize(mAddPlugins, { cacheKey: String })

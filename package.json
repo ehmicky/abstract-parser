@@ -37,7 +37,7 @@
     "espree": "^10.0.1",
     "esprima": "^4.0.1",
     "is-plain-obj": "^4.1.0",
-    "mem": "^9.0.2",
+    "memoize": "^10.0.0",
     "meriyah": "^2.1.1",
     "typescript": "^5.4.5"
   },
