@@ -42,7 +42,7 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
-    "@ehmicky/dev-tasks": "^3.0.9"
+    "@ehmicky/dev-tasks": "^3.0.10"
   },
   "engines": {
     "node": ">=18.18.0"
