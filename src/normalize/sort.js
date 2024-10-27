@@ -10,7 +10,6 @@ export const sortKeys = (node, { sort }) => {
 }
 
 const sortObject = (object, comparator) => {
-  // eslint-disable-next-line fp/no-mutating-methods
   const keys = Object.keys(object).sort(comparator)
   return Object.fromEntries(keys.map((key) => [key, object[key]]))
 }
