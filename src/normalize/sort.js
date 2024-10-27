@@ -24,22 +24,12 @@ const keysComparator = (keyA, keyB) => {
     return 1
   }
 
-  const locIndex = sortLocAttr(keyA, keyB)
-
-  if (locIndex !== undefined) {
-    return locIndex
-  }
-
-  return compareKeys(keyA, keyB)
+  return sortLocAttr(keyA, keyB)
 }
 
 // Location attributes come last, and follow a specific order with each other
 const sortLocAttr = (keyA, keyB) => {
   const [locIndexA, locIndexB] = getLocIndexes(keyA, keyB)
-
-  if (locIndexA === undefined) {
-    return
-  }
 
   if (locIndexA === -1) {
     return -1
@@ -63,10 +53,4 @@ const getLocIndexes = (keyA, keyB) => {
   return [locIndexA, locIndexB]
 }
 
-const compareKeys = (keyA, keyB) => {
-  if (keyA > keyB) {
-    return 1
-  }
-
-  return -1
-}
+const compareKeys = (keyA, keyB) => (keyA > keyB ? 1 : -1)
