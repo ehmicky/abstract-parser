@@ -42,7 +42,7 @@
     "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "@ehmicky/dev-tasks": "^3.0.27",
+    "@ehmicky/dev-tasks": "^3.0.28",
     "@ehmicky/eslint-config": "^20.0.19",
     "@ehmicky/prettier-config": "^1.0.4"
   },
